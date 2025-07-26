@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+
+  <title>Instagram Seguidores y Seguidos</title>
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>Analizador Instagram</h1>
+
+    <main>
+        <section class="upload-section">
+            <input style="display: none;" type="file" id="inputZip" accept=".zip" />
+            <button class="customInputZip">Importa tu archivo .zip de instagram</button>
+            <div class="advice info"><img src="info.png" alt="imagen de info">Usualmente, puedes obtenerlo en: Centro de cuentas > Información y permisos > Descarga tu Información.</div>
+            <div class="advice alert"><img src="alert.png" alt="imagen de advertencia">Recuerda descargarla en formato JSON. Si eliges obtener Información parcial, recuerda marcar la opción de seguidos y seguidores.</div>
+        </section>
+
+        <section>
+            <h2>No me siguen</h2>
+            <div class="grid" id="noMeSiguenGrid">
+                <div class="grid-header">Usuario</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>No los sigo</h2>
+            <div class="grid" id="noLosSigoGrid">
+                <div class="grid-header">Usuario</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lista completa de usuarios y relaciones</h2>
+
+            <search>
+                <label for="searchUser">Buscar usuario:</label>
+                <input type="text" id="searchUser" placeholder="Escribe nombre de usuario para filtrar..." disabled />
+            </search>
+
+            <div class="grid grid-3" id="tablaCompletaGrid">
+                <div class="grid-header">Usuario</div>
+                <div class="grid-header">Me sigue</div>
+                <div class="grid-header">Lo sigo</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

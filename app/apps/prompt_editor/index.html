@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Editor de Prompts</title>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Editor de Prompts</h1>
+
+  <main>
+    <section>
+      <textarea id="textInput" rows="8" placeholder="Pega tu texto aquí..."></textarea>
+      <div id="highlightedText" class="highlighted hidden"></div>
+
+      <button id="continueBtn" disabled>Continuar</button>
+    </section>
+
+    <section>
+      <div id="formContainer" class="inputs-container hidden">
+      </div>
+
+      <button id="generateBtn" class="hidden">Generar texto nuevo</button>
+    </section>
+
+    <section id="resultSection" class="result-container hidden">
+      <h3>Texto generado:</h3>
+
+      <section>
+        <div id="resultText" class="highlighted">
+        </div>
+        <button id="copyBtn" onclick="copyToClipboard()">Copiar texto<img id="copyImage" src="copy.png" alt="copy button image"></button>
+      </section>
+
+      <div class="alert">
+        <img src="alert.png" alt="imagen de advertencia">Por favor, recarga la página para volver a usar la herramienta.
+        <button onclick="location.reload()"><img src="reload.png" alt="reload image">Recargar</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
