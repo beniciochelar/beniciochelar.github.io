@@ -147,10 +147,16 @@ inputZip.addEventListener('change', async e => {
 
     try {
         const zip = await JSZip.loadAsync(file);
+        let name
+
+        for (let i in zip.files) {
+            name = i.split("/")[0]
+            break
+        }
 
         // Rutas
-        const rutaSeguidores = 'connections/followers_and_following/followers_1.json';
-        const rutaSeguidos = 'connections/followers_and_following/following.json';
+        const rutaSeguidores = name + '/connections/followers_and_following/followers_1.json';
+        const rutaSeguidos = name + '/connections/followers_and_following/following.json';
 
         // Leer archivos dentro del ZIP
         const seguidosFile = zip.file(rutaSeguidos);
