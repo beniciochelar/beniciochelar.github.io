@@ -155,14 +155,17 @@ inputZip.addEventListener('change', async e => {
         }
 
         // Rutas
-        const rutaSeguidores = name + '/connections/followers_and_following/followers_1.json';
-        const rutaSeguidos = name + '/connections/followers_and_following/following.json';
+        const rutaSeguidores1 = '/connections/followers_and_following/followers_1.json';
+        const rutaSeguidos1 = '/connections/followers_and_following/following.json';
 
         // Leer archivos dentro del ZIP
-        const seguidosFile = zip.file(rutaSeguidos);
-        const seguidoresFile = zip.file(rutaSeguidores);
+        const seguidosFile1 = zip.file(rutaSeguidos1);
+        const seguidoresFile1 = zip.file(rutaSeguidores1);
 
-        if (!seguidosFile || !seguidoresFile) {
+        const seguidosFile = seguidosFile1 ? seguidosFile1 : name + seguidosFile1
+        const seguidoresFile = seguidoresFile1 ? seguidoresFile1 : name + seguidoresFile1
+
+        if (!seguidosFile1 || !seguidoresFile1) {
             alert('No se encontraron los archivos JSON en las rutas esperadas dentro del ZIP.');
             return;
         }
